@@ -19,15 +19,15 @@
     for (;;) {
         NSNumber *startVal = self[start];
         NSNumber *endVal = self[end];
-        if ( end == start + 1) {
+        if (end == start + 1) {
             return (endVal.integerValue < startVal.integerValue ? endVal : startVal);
         }
         NSInteger mid = (start + end) / 2;
         NSNumber *midVal = self[mid];
-        if (midVal.integerValue < startVal.integerValue ) {
-            mid = end;
+        if (midVal.integerValue < startVal.integerValue) {
+            end = mid;
         }else {
-            start = end;
+            start = mid;
         }
     }
     
